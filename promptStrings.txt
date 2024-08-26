@@ -1,0 +1,45 @@
+PS1 : primary prompt string : $
+PS2 : secondary prompt for multi-line input : >
+PS3 : prompt string in select loops : #?
+PS4 : prompt string for execution trace : +
+
+
+Escape sequences
+\A : Current time in 24-hour as hh:mm
+\d : date in "weekday month day" format
+\h : Hostname upto first period
+\H : Complete Hostname
+\s : Name of the shell
+\t : Current time in 24-hour as hh:mm:ss 
+\T : Current time in 12-hour as hh:mm:ss 
+\u : Current user's username 
+\w : Current directory
+\W : Basename of Current directory
+\# : Current command number
+\$ : If uid is 0, # else $
+\@ : Current time in 12-hour am/pm 
+\\ : A literal \ character
+
+\u@\h:\w\$ : General prompt string in ubuntu and other linux distros
+
+try `echo $PS1`
+We can change this PS1 anyway we want by using above mentioned Escape sequences
+if anything goes wrong with prompt string just run `source .bashrc`
+
+prompt string is stored in .bashrc file
+
+Now try `echo $PS2`
+Again try this `echo 'hello`
+
+We can change PS2 similarlly as we have done for PS1 
+PS2='Hey \u, close the string : '
+
+Now lets try `echo $PS3`
+
+select x in alpha beta gamma; do echo $x; done
+PS3='choose your option as above : '
+
+try : `set -x`
+then run `pwd`
+PS4='Now running command'
+set +x
